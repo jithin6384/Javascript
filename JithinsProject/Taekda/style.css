@@ -1,0 +1,53 @@
+.btn.btn-outline-primary {
+    width: 100%;
+    margin: 18px 0;
+    }
+    .article-feed {
+    border: 2px solid #ccc;
+    padding: 12px;
+    border-left: 12px solid #da5283;
+    margin-top: 32px;
+    }
+    .buttons .btn.btn-outline-primary {
+    text-align: left;
+    border: 1px solid #d1d1d1;
+    padding: 28px;
+    border-radius: 17px;
+    color: #363636;
+    font-weight: bold;
+    }
+    .buttons .btn.btn-outline-primary span {
+    float: right;
+    }
+    .btn.btn-outline-primary.velcade::before {
+        content: url(right_connector.svg);
+        position: absolute;
+        bottom: -2px;
+        left: -54px;
+        height: 53px;
+        z-index: -9;
+    }
+    .btn.btn-outline-primary.pipeline::before {
+        content: url(right_connector.svg);
+        position: absolute;
+        bottom: -2px;
+        left: -54px;
+        height: 53px;
+        z-index: -9;
+    }
+    .btn.btn-outline-primary.iclusig::before {
+        content: url(right_connector.svg);
+        position: absolute;
+        bottom: -2px;
+        left: -54px;
+        height: 53px;
+        z-index: -9;
+    }
+    .btn.btn-outline-primary.mobocertinib::before {
+        content: url(left_connector.svg);
+        position: absolute;
+        bottom: 117px;
+        left: -54px;
+        height: 53px;
+        z-index: -9;
+    }

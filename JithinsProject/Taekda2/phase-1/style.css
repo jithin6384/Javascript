@@ -1,0 +1,62 @@
+.btn.btn-outline-primary {
+    width: 100%;
+    margin: 18px 0;
+    }
+    .article-feed {
+    border: 2px solid #ccc;
+    padding: 12px;
+    border-left: 12px solid #da5283;
+    margin-top: 32px;
+    }
+    .buttons .btn.btn-outline-primary {
+    text-align: left;
+    border: 1px solid #d1d1d1;
+    padding: 28px;
+    border-radius: 17px;
+    color: #363636;
+    font-weight: bold;
+    }
+    .buttons .btn.btn-outline-primary span {
+    float: right;
+    }
+    
+
+    .left-connector::before {
+        content: url(right_connector.svg);
+        position: absolute;
+        bottom: -2px;
+        left: -55px;
+        height: 53px;
+        z-index: -9;
+    }
+
+
+    .right-connector::before {
+        content: url(left_connector.svg);
+        position: absolute;
+        bottom: 117px;
+        left: -53px;
+        height: 53px;
+        z-index: -9;
+    }
+
+    .connector-nine::before {
+        content: url(right_connector.svg);
+        position: absolute;
+        bottom: 117px;
+        left: 232px;
+        height: 53px;
+        z-index: -9;
+    }
+
+    .top-right-connector::before {
+        content: url(left_connector.svg);
+        position: absolute;
+        bottom: 117px;
+        left: -53px;
+        height: 53px;
+        z-index: -9;
+    }
+
+
+    

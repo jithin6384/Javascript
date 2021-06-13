@@ -1,0 +1,23 @@
+.dino{
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    background-color: red;
+    bottom: 0px;
+}
+
+.obstacle{
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    background-color: yellow;
+    bottom: 0px;
+}
+
+.displayScore{
+    position: absolute;
+    /* background-color: yellow; */
+    top: 0px;
+    left: 1000px
+
+}

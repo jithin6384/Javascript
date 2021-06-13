@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" type ="text/css" href ="style.css">
+</head>
+
+<body>
+    <div id="myItemList">List</div>
+    <script>
+        let items = [{
+            title: 'Blue Lorem ipssume',
+            color: '#da5283'
+
+        }, {
+            title: 'orange Lorem ipssume',
+            color: '#da5283'
+        }, {
+            title: 'red Lorem ipssume',
+            color: '#da5283'
+        }, {
+            title: 'blueviolet Lorem ipsume',
+            color: '#da5283'
+        }, {
+            title: 'black Lorem ipssume',
+            color: '#da5283'
+        }, {
+            title: 'green Lorem ipssume',
+            color: '#da5283'
+        }, {
+            title: 'Blue Lorem ipssume',
+            color: '#da5283'
+        }, {
+            title: 'Blue Lorem ipssume',
+            color: '#9b72b0'
+        }, {
+            title: 'Blue Lorem ipssume',
+            color: '#9b72b0'
+        }, {
+            title: 'Blue Lorem ipssume',
+            color: '#4c9bcf'
+        }, {
+            title: 'Blue Lorem ipssume',
+            color: '#4c9bcf'
+        }, {
+            title: 'Blue Lorem ipssume',
+            color: '#4c9bcf'
+        }, {
+            title: 'Blue Lorem ipssume',
+            color: '#da5283'
+        }, {
+            title: 'Blue Lorem ipssume',
+            color: '#4c9bcf'
+        }, {
+            title: 'Blue Lorem ipssume',
+            color: '#9b72b0'
+        }, {
+            title: 'Blue Lorem ipssume',
+            color: '#4c9bcf'
+        }, {
+            title: 'Blue Lorem ipssume',
+            color: '#da5283'
+        }, {
+            title: 'Blue Lorem ipssume',
+            color: '#4c9bcf'
+        }];
+
+        var totalLength = items.length;
+
+
+        var totalRow = totalLength / 4; //alert(totalRow);
+        var totalRowRemaingElement = totalLength % 4; //alert(totalRowRemaingElement);
+
+        var totalThreeRowGroup = totalLength / 12; //alert(totalThreeRowGroup);
+        var totalThreeRowRemaingGroup = totalLength % 12; //alert(totalThreeRowRemaingGroup);
+
+        var tempList = items;
+        var listFirst = tempList.slice(0, 12);
+        var secondList = tempList.slice(12, tempList.length);
+
+        ul = document.createElement('ul');
+
+        document.getElementById('myItemList').appendChild(ul);
+        items.forEach(function(item, index) {
+            let li = document.createElement('li');
+            ul.appendChild(li);
+
+            li.innerHTML += item.title;
+            li.classList.add('dynamic-list');
+            li.setAttribute('id', 'dynamic-unique-id-' + index)
+            li.style.background = item.color;
+            if (index == 0 || index == 2 || index == 5 || index == 8 || index == 10) {
+                li.classList.add('isafterRight');
+                let className = 'content-in-after';
+                if (index == 0) {
+                    if (items[5]) {
+                        // debugger
+                        let getColor = items[5].color;
+                        bleedingDependcolor(item.color, getColor, className);
+                    }
+                }
+                if (index == 2) {
+                    if (items[5]) {
+                        let getColor = items[5].color;
+                        bleedingDependcolor(item.color, getColor, className);
+                    }
+                }
+                if (index == 5) {
+                    if (items[10]) {
+                        let getColor = items[10].color;
+                        bleedingDependcolor(item.color, getColor, className);
+                    }
+                }
+                if (index == 8) {
+                    if (items[13]) {
+                        let getColor = items[13].color;
+                        bleedingDependcolor(item.color, getColor, className);
+                    }
+                }
+                if (index == 10) {
+                    if (items[15]) {
+                        let getColor = items[15].color;
+                        bleedingDependcolor(item.color, getColor, className);
+                    }
+                }
+            }
+            if (index == 2 || index == 5 || index == 10 || index == 13) {
+                li.classList.add('isBeforeleft');
+                let className = 'content-in-before';
+                if (index == 2) {
+                    if (items[7]) {
+                        let getColor = items[7].color;
+                        li.classList.add('thisIsInBefore');
+                        bleedingDependcolor(item.color, getColor, className);
+                    }
+                }
+                if (index == 5) {
+                    if (items[8]) {
+                        let getColor = items[8].color;
+                        li.classList.add('thisIsInBefore');
+                        bleedingDependcolor(item.color, getColor, className);
+                    }
+                }
+                if (index == 10) {
+                    if (items[13]) {
+                        let getColor = items[13].color;
+                        li.classList.add('thisIsInBefore');
+                        bleedingDependcolor(item.color, getColor, className);
+                    }
+                }
+                if (index == 13) {
+                    if (items[16]) {
+                        let getColor = items[16].color;
+                        bleedingDependcolor(item.color, getColor, className);
+                    }
+                }
+            }
+
+            function bleedingDependcolor(firstColor, SecondColor, className) {
+                if (className == 'content-in-after') {
+                    if (firstColor == '#da5283' && SecondColor == '#da5283') {
+                        li.classList.add('bleeding-color-red-red');
+                    } else if (firstColor == '#da5283' && SecondColor == '#9b72b0') {
+                        li.classList.add('bleeding-color-red-bluevoilet');
+                    } else if (firstColor == '#da5283' && SecondColor == '#4c9bcf') {
+                        li.classList.add('bleeding-color-red-lightBlue');
+                    } else if (firstColor == '#9b72b0' && SecondColor == '#da5283') {
+                        li.classList.add('bleeding-color-bluevoilet-red');
+                    } else if (firstColor == '#9b72b0' && SecondColor == '#9b72b0') {
+                        li.classList.add('bleeding-color-bluevoilet-bluevoilet');
+                    } else if (firstColor == '#9b72b0' && SecondColor == '#4c9bcf') {
+                        li.classList.add('bleeding-color-bluevoilet-lightBlue');
+                    } else if (firstColor == '#4c9bcf' && SecondColor == '#da5283') {
+                        li.classList.add('bleeding-color-lightBlue-red');
+                    } else if (firstColor == '#4c9bcf' && SecondColor == '#9b72b0') {
+                        li.classList.add('bleeding-color-lightBlue-bluevoilet');
+                    } else if (firstColor == '#4c9bcf' && SecondColor == '#4c9bcf') {
+                        li.classList.add('bleeding-color-lightBlue-lightBlue');
+                    }
+                } else {
+                    if (firstColor == '#da5283' && SecondColor == '#da5283') {
+                        li.classList.add('bleeding-color-red-red-before');
+                    } else if (firstColor == '#da5283' && SecondColor == '#9b72b0') {
+                        li.classList.add('bleeding-color-red-bluevoilet-before');
+                    } else if (firstColor == '#da5283' && SecondColor == '#4c9bcf') {
+                        li.classList.add('bleeding-color-red-lightBlue-before');
+                    } else if (firstColor == '#9b72b0' && SecondColor == '#da5283') {
+                        li.classList.add('bleeding-color-bluevoilet-red-before');
+                    } else if (firstColor == '#9b72b0' && SecondColor == '#9b72b0') {
+                        li.classList.add('bleeding-color-bluevoilet-bluevoilet-before');
+                    } else if (firstColor == '#9b72b0' && SecondColor == '#4c9bcf') {
+                        li.classList.add('bleeding-color-bluevoilet-lightBlue-before');
+                    } else if (firstColor == '#4c9bcf' && SecondColor == '#da5283') {
+                        li.classList.add('bleeding-color-lightBlue-red-before');
+                    } else if (firstColor == '#4c9bcf' && SecondColor == '#9b72b0') {
+                        li.classList.add('bleeding-color-lightBlue-bluevoilet-before');
+                    } else if (firstColor == '#4c9bcf' && SecondColor == '#4c9bcf') {
+                        li.classList.add('bleeding-color-lightBlue-lightBlue-before');
+                    }
+                }
+            }
+        });
+    </script>
+    <style>
+        .dynamic-list {
+            list-style: none;
+            padding: 22px 25px;
+            background: red;
+            display: inline-block;
+            color: #fff;
+            letter-spacing: 0.5px;
+            margin: 13px 14px;
+            min-width: 190px;
+            max-width: 190px;
+            position: relative;
+            border-radius: 12px;
+            text-transform: capitalize;
+            text-align: left;
+            box-shadow: 1px 1px 2px #00000024;
+        }
+        
+        li.isBeforeleft:before {
+            /* content: url(connecter-red.png); */
+            position: absolute;
+            bottom: -11px;
+            left: -93px;
+            width: 20px;
+            height: 60px;
+            z-index: -1;
+            border-radius: 6px;
+        }
+        
+        .isafterRight:after {
+            /* content: url(connecter-red.png); */
+            position: absolute;
+            bottom: -115px;
+            right: 7px;
+            width: 20px;
+            height: 60px;
+            transform: rotate(-90deg);
+            border-radius: 9px;
+            z-index: -1;
+        }
+        /* connector after */
+        
+        .bleeding-color-red-red-before::before {
+            content: url(connecter-red-red-left.png);
+        }
+        
+        .bleeding-color-red-bluevoilet-before::before {
+            content: url(connector-red-voilent-blue.png);
+        }
+        
+        .bleeding-color-red-lightBlue-before::before {
+            content: url(connector-red-lightblue.png);
+        }
+        
+        .bleeding-color-bluevoilet-red-before::before {
+            content: url(connector-red-voilent-blue.png);
+        }
+        
+        .bleeding-color-bluevoilet-bluevoilet-before::before {
+            content: url(connector-lightblue-lightblue.png);
+        }
+        
+        .bleeding-color-bluevoilet-lightBlue-before::before {
+            content: url(connector-red-lightblue.png);
+        }
+        
+        .bleeding-color-lightBlue-red-before::before {
+            content: url(connector-red-lightblue.png);
+        }
+        
+        .bleeding-color-red-bluevoilet-before::before {
+            content: url(connector-red-voilent-blue.png);
+        }
+        
+        .bleeding-color-lightBlue-lightBlue-before::before {
+            content: url(connector-lightblue-lightblue.png);
+        }
+        /* connector before */
+        
+        .bleeding-color-red-red::after {
+            content: url(connecter-red-red-left.png);
+        }
+        
+        .bleeding-color-red-bluevoilet::after {
+            content: url(connector-red-voilent-blue.png);
+        }
+        
+        .bleeding-color-red-lightBlue::after {
+            content: url(connector-red-lightblue.png);
+        }
+        
+        .bleeding-color-bluevoilet-red::after {
+            content: url(connector-red-voilent-blue.png);
+        }
+        
+        .bleeding-color-bluevoilet-bluevoilet::after {
+            content: url(connector-lightblue-lightblue.png);
+        }
+        
+        .bleeding-color-bluevoilet-lightBlue::after {
+            content: url(connector-red-lightblue.png);
+        }
+        
+        .bleeding-color-lightBlue-red::after {
+            content: url(connector-red-lightblue.png);
+        }
+        
+        .bleeding-color-red-bluevoilet::after {
+            content: url(connector-red-lightblue.png);
+        }
+        
+        .bleeding-color-lightBlue-lightBlue::after {
+            content: url(connector-lightblue-lightblue.png);
+        }
+        
+        #dynamic-unique-id-8::after {
+            transform: rotate( 0deg);
+            border-radius: 0px;
+            bottom: -13px;
+            right: 33px;
+        }
+        
+        #dynamic-unique-id-13::before {
+            transform: rotate( -90deg);
+            bottom: -101px;
+            left: -55px;
+        }
+        
+        #dynamic-unique-id-2::after {
+            transform: rotate( 0deg);
+            bottom: -12px;
+            left: -94px;
+            right: unset;
+        }
+        
+        #dynamic-unique-id-2::before {
+            transform: rotate( -90deg);
+            bottom: -110px;
+            left: 213px;
+        }
+        
+        #dynamic-unique-id-5::after {
+            transform: rotate( 0deg);
+            bottom: -10px;
+            left: 185px;
+        }
+    </style>
+</body>
+
+</html>
